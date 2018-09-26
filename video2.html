@@ -1,0 +1,58 @@
+<html>
+
+<head>
+  <!-- AR.js by @jerome_etienne - github: https://github.com/jeromeetienne/ar.js - info: https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf -->
+  <script src="vendor/aframe.min.js"></script>
+  <script src="vendor/aframe-ar.js"></script>
+  <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.8.4/dist/aframe-extras.min.js"></script>
+
+  <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+  <script>
+AFRAME.registerComponent('vidhandler', {
+  // ...
+  init: function () {
+    // Set up initial state and variables.
+    this.toggle = false;
+    this.vid = document.querySelector("#vid")
+    this.vid.pause();
+  },
+  tick:function(){
+    
+if(this.el.object3D.visible == true){
+  if(!this.toggle){
+     this.toggle = true;
+     this.vid.play();
+    }
+  }else{
+  this.toggle = false;
+    this.vid.pause();
+    }
+  }
+});
+  </script>
+
+</head>
+
+
+<body style='margin : 0px; overflow: hidden;'>
+  <div style='position: fixed; top: 10px; width:inherit; text-align: center; z-index: 1;'>
+    <a href="https://github.com/jeromeetienne/AR.js/" target="_blank">AR.js</a> - Check out the repository !
+  </div>
+  <a-scene embedded artoolkit='sourceType: webcam; detectionMode: mono; maxDetectionRate: 30; canvasWidth: 240; canvasHeight: 180' >
+    <a-assets>
+      <video id="vid" src="assets/video.mp4" loop="true" crossorigin>
+    </a-assets>
+   
+    <a-marker id="memarker" preset="hiro" vidhandler>
+      <a-plane position='1 2 -2' scale="2 2 2" width="2" rotation="-90 0 0" material='transparent:true;opacity: 0.7;src:#vid'></a-plane>
+      <a-plane position="-3 1 -5" rotation="-5 45 -10" width="2" height="4" color="#93648D"></a-plane>
+      <a-plane position="0 1 -5" rotation="0 -45 10" height="10" color="#FFC65D"></a-plane>
+      <a-plane position="3 1 -5" rotation="45 -45 0" height="7" color="#4CC3D9" metalness=".1"></a-plane>
+      <a-plane position="0 1 -15" rotation="30 0 0" width="20" height="2" color="#7BC8A4"></a-plane>
+      <a-plane position="-7 4 -10" rotation="30 20 45" width="10" height="1.5" color="#F16745"></a-plane>
+    </a-marker>
+
+  </a-scene>
+</body>
+
+</html>
