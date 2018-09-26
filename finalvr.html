@@ -36,14 +36,6 @@
                   <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
               </a-torus-knot>
           </a-box>
-          <a-entity position="-3 1 -6" rotation="5 0 0">
-        <a-entity
-          rotation="0 0 5"
-          position="0 2 0.2"
-          text-geometry="value: Virtual Reality; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: 1; height: 0;"
-          material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;">
-        </a-entity>
-          </a-entity>
 		</a-marker>
 		
 		<!-- handle kanji marker -->
@@ -57,6 +49,14 @@
 		
 		<!-- add a simple camera -->
 		<a-entity camera></a-entity>
+        <a-entity position="-3 1 -6" rotation="5 0 0">
+          <a-entity
+            rotation="0 0 5"
+            position="0 2 0.2"
+            text-geometry="value: Virtual Reality; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: 1; height: 0;"
+            material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;">
+          </a-entity>
+        </a-entity>
 	</a-scene>
 </body>
 </html>
