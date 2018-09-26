@@ -36,7 +36,7 @@ if(this.el.object3D.visible == true){
   <div style='position: fixed; top: 10px; width:inherit; text-align: center; z-index: 1;'>
     <a href="https://github.com/jeromeetienne/AR.js/" target="_blank">AR.js</a> - Check out the repository !
   </div>
-  <a-scene embedded artoolkit='sourceType: webcam; maxDetectionRate: 30; canvasWidth: 240; canvasHeight: 180; mono_and_matrix; matrixCodeType: 3x3' >
+  <a-scene embedded arjs='sourceType: webcam; maxDetectionRate: 30; canvasWidth: 240; canvasHeight: 180; mono_and_matrix; matrixCodeType: 3x3;' >
     <a-assets>
       <video id="vid" src="assets/video_small.mp4" loop="true" crossorigin>
     </a-assets>
