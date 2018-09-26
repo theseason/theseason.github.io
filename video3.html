@@ -41,8 +41,8 @@ if(this.el.object3D.visible == true){
       <video id="vid" src="assets/video_small.mp4" loop="true" crossorigin>
     </a-assets>
    
-    <a-marker type='barcode' value='5'>
-      <a-plane position='0 0 0' scale="2 2 2" rotation="-90 0 0" material='transparent:true;opacity: 0.7;src:#vid'></a-plane>
+    <a-marker type='barcode' value='5' vidhandler>
+      <a-video src="#vid" width="16" height="9" position="0 0 -20"></a-video>
     </a-marker>
 
   </a-scene>
