@@ -16,6 +16,7 @@
         <a-asset-item id="dawningFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"></a-asset-item>
         <a-asset-item id="exoFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150"></a-asset-item>
         <a-asset-item id="exoItalicFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2BlackItalic.typeface.json?1490305922725"></a-asset-item>
+        <video id="video" loop="true" src="assets/video_small.mp4" webkit-playsinline>
       </a-assets>
 
 		<!-- handle hiro marker -->
@@ -34,8 +35,9 @@
                   <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
               </a-torus-knot>
           </a-box>
-          <a-plane src="#pink" height="100" width="100" rotation="0 0 0"></a-plane>
-          <a-plane src="#flower" height="1" rotation="0 0 0"></a-plane>
+          <a-plane src="#pink" height="2" rotation="0 0 0"></a-plane>
+          <a-plane src="#flower" height="4" rotation="0 0 0"></a-plane>
+          <a-video id="videoScreen" src="#video" width="16" height="9" autoplay=true></a-video>
 		</a-marker>
 		
 		<!-- add a simple camera -->
