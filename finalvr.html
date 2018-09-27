@@ -3,6 +3,7 @@
 <!-- include aframe-ar.js -->
 <script src="vendor/aframe-ar.js"></script>
 <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+<script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'><div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
 	<a href="https://github.com/jeromeetienne/AR.js/" target="_blank">AR.js</a> - example for a-frame
@@ -38,6 +39,7 @@
           <a-plane src="#pink" height="2" rotation="0 0 0"></a-plane>
           <a-plane src="#flower" height="4" rotation="0 0 0"></a-plane>
           <a-video id="videoScreen" src="#video" width="16" height="9" autoplay=true></a-video>
+          <a-entity geometry="primitive:box;" material="shader:gif;src:url(nyancat.gif);color:green;opacity:.8"></a-entity>
 		</a-marker>
 		
 		<!-- add a simple camera -->
