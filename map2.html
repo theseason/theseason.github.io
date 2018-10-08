@@ -1,0 +1,30 @@
+<html>
+<script src="vendor/aframe.min.js"></script>
+<!-- include aframe-ar.js -->
+<script src="vendor/aframe-ar.js"></script>
+<script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+<script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+      <a-assets>
+        <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
+        <img id="map" src="assets/ground.png">
+        <img id="dome" src="assets/dome.png">
+        <a-asset-item id="dawningFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"></a-asset-item>
+      </a-assets>
+
+		<!-- handle matrix marker -->
+		<a-marker type='barcode' value='14'>
+          <a-entity rotation="-90 0 0" position="0 2 1" text-geometry="value: Fjord; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: .75; height: 0;" material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;">
+            <a-animation attribute="position" to="0 0 1" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
+          </a-entity>
+          <a-entity rotation="180 0 0" position="0 1 .5" scale="2 2 2" geometry="primitive:plane;" material="alphaTest: 0.5; src:#map;"></a-entity>
+          <a-entity rotation="-90 0 0" position="0 0 0" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#dome;"></a-entity>
+		</a-marker>
+		
+		<!-- add a simple camera -->
+		<a-entity camera></a-entity>
+	</a-scene>
+</body>
+</html>
