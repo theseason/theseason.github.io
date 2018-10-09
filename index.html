@@ -6,24 +6,28 @@
 <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
-	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUiEnabled:false;'>
       <a-assets>
         <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
-        <img id="flower" src="assets/mailchimp_2018_illustrations_magnifying_glass.gif" crossorigin="anonymous" />
-        <img id="nyancat" src="assets/nyancat.gif">
-        <img id="pusheen" src="assets/pusheen.gif">
-        <img id="circle" src="assets/giphy-6.gif">
+        <img id="map" src="assets/ground.png">
+        <img id="dome" src="assets/dome.png">
+        <img id="fox" src="assets/fox.png">
         <a-asset-item id="dawningFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"></a-asset-item>
       </a-assets>
 
 		<!-- handle matrix marker -->
-		<a-marker type='barcode' value='5'>
-          <a-entity rotation="-90 0 0" position="0 2 1" text-geometry="value: Fjord; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: .75; height: 0;" material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;">
-            <a-animation attribute="position" to="0 0 1" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
+		<a-marker type='barcode' value='14'>
+          <a-entity rotation="-90 0 0" position="0 2 .5" text-geometry="value: Fjord; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: .5; height: 0;" material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;">
+            <a-animation attribute="position" to="0 0 .5" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
           </a-entity>
-          <a-entity rotation="-90 0 0" position="0 0 0" geometry="primitive:plane;width:2;height:2;" material="shader:gif;src:#nyancat; opacity:.8"></a-entity>
-          <a-entity rotation="-90 0 0" position="-2 -3 .2" geometry="primitive:plane;width:3;height:3;" material="shader:gif;src:#pusheen; opacity:.8"></a-entity>
-          <a-entity rotation="-90 0 0" position="0.323 0.182 -1.101" geometry="primitive:plane;width:3;height:3" material="shader:gif;src:#circle;opacity:0.8"></a-entity>
+          <a-entity rotation="180 0 0" position="0 1 .5" scale="2 2 2" geometry="primitive:plane;" material="alphaTest: 0.5; src:#map;"></a-entity>
+          <a-entity rotation="-90 0 0" position="0 1.5 .5" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#dome;"></a-entity>
+          <a-entity rotation="-90 0 0" position="0 0 .5" scale=".5 .5 .5" geometry="primitive:plane;" material="alphaTest: 0.5; src:#fox;"></a-entity>
+          <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:pink;'>
+            <a-torus-knot radius='0.26' radius-tubular='0.05'>
+                <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+            </a-torus-knot>
+          </a-box>
 		</a-marker>
 		
 		<!-- add a simple camera -->
